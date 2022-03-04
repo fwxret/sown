@@ -1,0 +1,659 @@
+/* Header */
+
+#header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background: transparent;
+    z-index: 10;
+}
+
+.logo {
+    height: 60px;
+    line-height: 60px;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+}
+
+#toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#toggle::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background: #000000;
+    transform: translateY(-5px);
+    transition: 0.2s;
+}
+
+#toggle::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background: #000000;
+    transform: translateY(5px);
+    transition: 0.2s;
+}
+
+#toggle.active::before {
+    transform: translateY(0px) rotate(45deg);
+}
+
+#toggle.active::after {
+    transform: translateY(0px) rotate(-45deg);
+}
+
+#navbar {
+    position: relative;
+    height: 100px;
+    right: 100px;
+    transition: 0.6s;
+    width: 0;
+    overflow: hidden;
+}
+
+#navbar.active {
+    width: 484px;
+}
+
+#navbar {
+    position: relative;
+    height: 60px;
+    right: 60px;
+    transition: 0.6s;
+}
+
+#navbar ul {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+#navbar ul li a {
+    height: 60px;
+    line-height: 60px;
+    display: inline-block;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+    padding: 0 15px;
+    margin: 0 5px;
+    color: #000000;
+    position: relative;
+}
+
+#navbar ul li a::after {
+    position: absolute;
+    content: "";
+    bottom: 10px;
+    left: 0;
+    background-color: #fff;
+    width: 0;
+    height: 2px;
+    transition: 0.2s;
+}
+
+#navbar li a:hover {
+    color: #fff;
+}
+
+#navbar li a:hover::after {
+    width: 100%;
+}
+
+.home-logo {
+    width: 100px;
+    height: 100px;
+}
+
+
+/* Home */
+
+.app__container {
+    margin-top: 170px;
+}
+
+.scroling-text-container {
+    height: 500px;
+    margin-bottom: 100px;
+    overflow-x: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    line-height: 1.7;
+    transform: skewY(-5deg);
+}
+
+.bg-text-container {
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+    z-index: -999;
+}
+
+@keyframes text-scrolling {
+    0% {
+        transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0%, 0, 0);
+    }
+}
+
+.animate-text {
+    animation: text-scrolling 20s linear infinite;
+    will-change: transform;
+    display: block;
+    position: relative;
+    white-space: nowrap;
+}
+
+.animate-text.left {
+    animation-direction: reverse;
+}
+
+.bg-text-container span {
+    font-size: 230px;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 0.75;
+    min-width: auto;
+    font-weight: 800;
+}
+
+.sub-container {
+    padding: 30px;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.sub-container .sub-inner {
+    max-width: 600px;
+    margin: 0;
+}
+
+.sub-container .sub-inner h1 {
+    font-size: 60px;
+    margin: 0;
+    color: #000000;
+    width: 100%;
+}
+
+.sub-container .sub-inner p {
+    font-size: 26px;
+    margin: 0;
+    color: #000000;
+}
+
+.introduce-container {
+    height: 1000px;
+    margin: 100px 0;
+}
+
+.content-slogan {
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.content-slogan h2 {
+    position: relative;
+    padding-left: 28px;
+}
+
+.content-slogan h2::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background: #fff;
+    top: 12px;
+    left: 0;
+}
+
+.content-slogan p {
+    font-size: 80px;
+    letter-spacing: 0.1px;
+}
+
+.content-slogan p span {
+    color: #fff;
+    font-size: 90px;
+}
+
+.introduce-content {
+    float: right;
+    font-size: 18px;
+    height: 500px;
+    padding: 0 20px;
+}
+
+.introduce-content p {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.introduce-content p::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #000000;
+    top: -24px;
+}
+
+.introduce-btn {
+    background: #fff;
+}
+
+.content-img-container {
+    height: 800px;
+    margin-top: -300px;
+    padding: 0 20px;
+}
+
+.content-img-container h4 {
+    padding: 0 20px;
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+.content-img-container h3 {
+    padding: 0 20px;
+    font-size: 60px;
+}
+
+.content-img-container h3 span {
+    color: #fff;
+}
+
+.content-img-container p {
+    padding: 0 20px;
+    font-size: 20px;
+}
+
+.content-img-container img {
+    height: 400px;
+    padding: 0 20px;
+    width: 100%;
+    position: relative;
+}
+
+.content-img-container h2 {
+    position: absolute;
+    font-size: 190px;
+    z-index: 3;
+    color: #fff;
+    margin-top: -124px;
+}
+
+.content-img-description h2 {
+    padding: 0 20px;
+    color: #000000;
+    margin-left: -15px;
+    margin-top: 28px;
+    position: absolute;
+    font-size: 100px;
+    z-index: 3;
+}
+
+.content-img-description img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0 20px;
+    margin-top: -60px;
+}
+
+
+/* Design */
+
+#design {
+    margin-bottom: 80px;
+    padding: 10px;
+}
+
+.desigin-container {
+    height: 500px;
+}
+
+.header-design h2 {
+    position: relative;
+    color: #000000;
+    padding: 0 20px;
+    padding-left: 28px;
+}
+
+.header-design h2::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background: #fff;
+    top: 12px;
+    left: 0;
+}
+
+.design-img {
+    position: relative;
+}
+
+.design-img img {
+    width: 100%;
+    height: 400px;
+    padding: 0 20px;
+}
+
+.design-img h2 {
+    position: absolute;
+    font-size: 110px;
+    z-index: 3;
+    color: #fff;
+    margin-top: -80px;
+    padding: 0 20px;
+}
+
+.desigin-container {
+    height: 2100px;
+}
+
+.desgin-content h2 {
+    font-size: 114px;
+    margin: 46px 0;
+    padding: 0 20px;
+}
+
+.desgin-content p {
+    font-size: 20px;
+    position: relative;
+    padding: 0 20px;
+}
+
+.desgin-content p::before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 2px;
+    background: #fff;
+    top: -30px;
+    left: 0;
+    padding: 0 20px;
+}
+
+.header-develop {
+    padding: 0 20px;
+    height: 100px;
+}
+
+.header-develop h2 {
+    color: #fff;
+    padding: 0 20px;
+    margin: 100px 0;
+}
+
+.text-container {
+    padding: 0 20px;
+    font-size: 76px;
+    font-weight: 300;
+    text-align: center;
+    position: relative;
+    height: 100px;
+    line-height: 100px;
+    margin-top: 10px;
+    overflow: hidden;
+    width: 90%;
+    margin-left: 5%;
+    cursor: pointer;
+}
+
+.text-container:after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    border-bottom: 4px solid rgba(255, 255, 255, 0.5);
+    bottom: 50%;
+    left: -100%;
+    transition-delay: all 1s;
+    transition: all 1s;
+}
+
+.text-container:hover:after,
+.text-container.hover:after {
+    left: 100%;
+}
+
+.text-container .text {
+    text-shadow: 0px -100px 0px rgba(255, 255, 255, 1);
+    transition: all 1s;
+    transform: translateY(100%) translateZ(0);
+    transition-delay: all 1s;
+}
+
+.text-container:hover .text,
+.text-container.hover .text {
+    text-shadow: 0px -100px 0px rgba(255, 255, 255, 0);
+    transform: translateY(0%) translateZ(0) scale(1.1);
+    font-weight: 600;
+}
+
+section .scroll {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    overflow: hidden;
+    margin: 100px 0;
+}
+
+section .scroll .scroll-container {
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+}
+
+section .scroll .scroll-container:nth-child(1) {
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+    background-size: cover;
+    height: 200px;
+}
+
+section .scroll .scroll-container:nth-child(1) {
+    -webkit-text-stroke: 2px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: #fff;
+}
+
+section .scroll .scroll-container h2 {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 10em;
+    animation: animate 60s linear infinite;
+    padding: 0 20px;
+    letter-spacing: 4px;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.card-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0;
+    padding: 0 20px;
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 4em;
+    margin-top: -16px;
+}
+
+.card-container .card {
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.card-container .card .name {
+    position: relative;
+    padding: 10px 0;
+    border: 2px solid #000;
+    z-index: 1;
+    background: #fff;
+}
+
+.card-container .card .name h3 {
+    font-weight: 300;
+    font-size: 2em;
+    text-align: center;
+}
+
+.card-container .card .details {
+    position: relative;
+    text-align: center;
+    height: 0;
+    transition: 0.6s;
+    border: 2px solid #000;
+    margin-top: -2px;
+    top: -2px;
+    overflow: hidden;
+}
+
+.card-container .card:hover .details {
+    height: 300px;
+}
+
+.card-container .card .details .content {
+    position: relative;
+    padding: 40px 20px;
+}
+
+.card-container .card .details .content h2 {
+    font-size: 3em;
+    font-weight: 500;
+}
+
+.card-container .card .details .content h2 span {
+    font-size: 0.4em;
+}
+
+.card-container .card .details .content a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    margin-top: 20px 0;
+}
+
+.card-container .card .details .content p {
+    padding: 20px 0;
+}
+
+.card-container .card:nth-child(1) .name {
+    background: #d2fff2;
+}
+
+.card-container .card:nth-child(1) .details {
+    background: #f1fffb;
+}
+
+.card-container .card:nth-child(2) .name {
+    background: #fcffd2;
+}
+
+.card-container .card:nth-child(2) .details {
+    background: #ffffe2;
+}
+
+.card-container .card:nth-child(3) .name {
+    background: #fed2ff;
+}
+
+.card-container .card:nth-child(3) .details {
+    background: #ffeeff;
+}
+
+.card-container .card:nth-child(4) .name {
+    background: #fefefe;
+}
+
+.card-container .card:nth-child(4) .details {
+    background: #ffffa1;
+}
+
+#contact {
+    bottom: 0;
+    margin-top: 100px;
+    width: 100%;
+    height: 200px;
+    padding: 0 20px;
+}
+
+.contact-container h2 {
+    font-size: 40px;
+}
+
+.contact-container p {
+    font-size: 30px;
+}
+
+.contact-container .contact-text span {
+    color: #fff;
+}
+
+.contact-container .contact-email {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-container p i {
+    color: #000;
+    margin-right: 10px;
+    font-size: 30px;
+    justify-content: center;
+}
+
+.contact-container .contact-email p {
+    font-size: 30px;
+}
+
+.contact-policy h2 {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    font-size: 20px;
+}
